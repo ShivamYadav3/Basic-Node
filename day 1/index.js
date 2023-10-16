@@ -66,6 +66,7 @@ const PORT = 7800;
 const server = http
   .createServer((req, res) => {
     const path = req.url.split("?")[0];
+    // http://localhost:8080/?name=shivam&batch=c8
     if (path === "/") {
       var query = url.parse(req.url, true).query;
       console.log("Query: ", query);
