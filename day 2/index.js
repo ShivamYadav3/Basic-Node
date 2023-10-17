@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const products = require("./products.json");
+const cors = require("cors");
 
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello Homepage! with node mon");
 });
