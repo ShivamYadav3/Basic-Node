@@ -7,4 +7,4 @@ const { validateGetTodoDetails } = require("./todo.validator");
 todoRouter.get("/", getTodos);
 todoRouter.get("/:id", validateGetTodoDetails, getTodoDetails);
 
-module.exports.todoRouter = todoRouter;
+module.exports = todoRouter;
