@@ -1,8 +1,9 @@
-const { isObjEmpty } = require("../../utilities/json");
+// const { isObjEmpty } = require("../../utilities/json");
+import { isObjEmpty } from "../../utilities/json.js";
 
 let todos = [];
 
-const getTodos = (req, res) => {
+export const getTodos = (req, res) => {
   try {
     res.send(todos);
     return;
@@ -13,7 +14,7 @@ const getTodos = (req, res) => {
   }
 };
 
-const getTodoDetails = (req, res) => {
+export const getTodoDetails = (req, res) => {
   try {
     const { id } = req.params;
     console.log({ id });
@@ -30,7 +31,4 @@ const getTodoDetails = (req, res) => {
   }
 };
 
-module.exports = {
-  getTodoDetails,
-  getTodos,
-};
+// export { getTodoDetails, getTodos };

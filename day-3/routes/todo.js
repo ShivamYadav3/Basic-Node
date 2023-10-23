@@ -1,9 +1,8 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
+
 const router = express.Router();
-const {
-  validateCreatePostPayload,
-  validateIsIdAvailable,
-} = require("./newFile");
+import { validateCreatePostPayload, validateIsIdAvailable } from "./newFile";
 
 router.get("/", (req, res, next) => {
   res.send({ message: "welcome to todo" });
@@ -39,4 +38,5 @@ router.patch("/:id", (req, res, next) => {
   res.send({ message: "welcome to To Do patch method", key: id });
 });
 
-module.exports = router;
+// module.exports = router;
+export default router;

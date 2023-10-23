@@ -1,4 +1,4 @@
-const validateCreatePostPayload = (req, res, next) => {
+export const validateCreatePostPayload = (req, res, next) => {
   const { title, description } = req.body;
   if (!title) {
     res.status(400).send({ message: "please add title" });
@@ -11,11 +11,11 @@ const validateCreatePostPayload = (req, res, next) => {
   next();
 };
 
-const validateIsIdAvailable = (req, res, next) => {
+export const validateIsIdAvailable = (req, res, next) => {
   const { id } = req.params;
   if (!id) {
     res.status(400).send({ message: "please enter the id" });
   }
   next();
 };
-module.exports = { validateCreatePostPayload, validateIsIdAvailable };
+// module.exports = { validateCreatePostPayload, validateIsIdAvailable };

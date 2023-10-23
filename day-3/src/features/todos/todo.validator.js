@@ -8,6 +8,4 @@ const validateGetTodoDetails = (req, res, next) => {
   next();
 };
 
-module.exports = {
-  validateGetTodoDetails,
-};
+export { validateGetTodoDetails };

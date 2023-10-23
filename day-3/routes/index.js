@@ -1,5 +1,7 @@
-var express = require("express");
-var router = express.Router();
+// var express = require("express");
+import express from "express";
+
+var indexRouter = express.Router();
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -23,9 +25,10 @@ const isUserAllowed = (req, res, next) => {
   next();
 };
 
-router.get("/", isUserAllowed, (req, res, next) => {
+indexRouter.get("/", isUserAllowed, (req, res, next) => {
   const { name } = req.query;
   res.send({ message: `welcome ${name} yadav ji` });
 });
 
-module.exports = router;
+// module.exports = router;
+export default indexRouter;
