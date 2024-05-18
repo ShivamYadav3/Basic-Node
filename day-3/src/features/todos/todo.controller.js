@@ -1,10 +1,19 @@
 // const { isObjEmpty } = require("../../utilities/json");
 import { isObjEmpty } from "../../utilities/json.js";
+import TodoModel from "./todo.model.js";
 
 let todos = [];
 
-export const getTodos = (req, res) => {
+export const addTodo = async (req, res) => {
+  const { body } = req;
+  const todo = new TodoModel(body);
+  const response = await todo.save();
+  res.send({ message: "Todo Saved successfully", data: todo });
+};
+
+export const getTodos = async (req, res) => {
   try {
+    const todos = await TodoModel.find();
     res.send(todos);
     return;
   } catch (err) {

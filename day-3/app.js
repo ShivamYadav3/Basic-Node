@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import mongoose from "mongoose";
 
 // // var indexRouter = require("./routes/index");
 import indexRouter from "./routes/index.js";
@@ -20,6 +21,13 @@ import todoRouter from "./src/features/todos/todo.routes.js";
 import { serviceRouter } from "./src/features/service/service.routes.js";
 
 var app = express();
+
+// mongodb connection
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/user")
+  .then((data) => console.log("DataBase connected successfully"))
+  .catch((err) => console.log("err", err));
 
 // // view engine setup
 const __filename = fileURLToPath(import.meta.url);
